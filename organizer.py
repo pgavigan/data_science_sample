@@ -18,9 +18,8 @@ import pandas as pd
 data = pd.read_json ('json_data.json')
     
 # Deal with loading it to a database (placeholder for something more sofisticated)
-databaseFileName = 'data.db'
-con = sl.connect(databaseFileName)
 try:
-    data.to_sql('record', con)
+    data.to_sql('record', sl.connect('data.db'))
 except:
     pass
+    # Ideally this should send some error data to a log of some sort
