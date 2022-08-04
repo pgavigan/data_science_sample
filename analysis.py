@@ -16,4 +16,5 @@ data = pd.read_sql("SELECT * FROM record", sl.connect('data.db'))
 # Perform analysis. For the purpose of this example, plot some data...
 # Plot line chart including average, minimum and maximum temperature
 data.plot(y=['tavg', 'tmin', 'tmax'])
+plt.savefig("results.jpg", dpi=150)
 plt.show()
